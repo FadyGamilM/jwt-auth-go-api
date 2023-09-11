@@ -38,3 +38,7 @@ func Connect() *mongo.Client {
 	log.Println("connected to mongodb ...")
 	return client
 }
+
+func OpenCollection(client *mongo.Client, db string, collection string) *mongo.Collection {
+	return client.Database(db).Collection(collection)
+}
